@@ -43,6 +43,8 @@ const Footer = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      // Remove the hash from the URL
+      window.history.pushState(null, "", window.location.pathname);
     }
   };
 
@@ -58,69 +60,49 @@ const Footer = () => {
           className="flex flex-col md:flex-row gap-4 text-center md:text-left"
         >
           <li>
-            <a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScroll("home");
-              }}
+            <button
+              onClick={() => handleScroll("home")}
               className="p-2 nav-item"
             >
               Home
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#about"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScroll("about");
-              }}
+            <button
+              onClick={() => handleScroll("about")}
               className="p-2 nav-item"
             >
               About
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#skills"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScroll("skills");
-              }}
+            <button
+              onClick={() => handleScroll("skills")}
               className="p-2 nav-item"
             >
               Skills
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScroll("projects");
-              }}
+            <button
+              onClick={() => handleScroll("projects")}
               className="p-2 nav-item"
             >
               Projects
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScroll("contact");
-              }}
+            <button
+              onClick={() => handleScroll("contact")}
               className="p-2 nav-item"
             >
               Contact
-            </a>
+            </button>
           </li>
         </ul>
         <div ref={socialRef} className="flex gap-6">
           <a
-            href="https://github.com/adhikaribirat7"
+            href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-500 transition-colors"
@@ -128,12 +110,20 @@ const Footer = () => {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/birat-adhikari-b774272b3/"
+            href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-500 transition-colors"
           >
             LinkedIn
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 transition-colors"
+          >
+            Twitter
           </a>
         </div>
       </div>
